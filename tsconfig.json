@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "jsx": "react"
+  },
+  "lib": [
+    "dom",
+    "es2016",
+    "ESNext"
+  ],
+  "exclude": [
+    "./node_modules"
+  ],
+  "include": ["./src"]
+}
