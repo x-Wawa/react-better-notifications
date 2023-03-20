@@ -216,7 +216,7 @@ const css = `
 }
 `
 
-export function NotificationsProvider(props: {children: React.ReactNode}): JSX.Element {
+export function NotificationsProvider({children, useDefaultStyle}: {children: React.ReactNode, useDefaultStyle?: boolean}): JSX.Element {
 
   const [notifications, setNotification] = React.useState<Notification[]>([])
 
@@ -310,13 +310,17 @@ export function NotificationsProvider(props: {children: React.ReactNode}): JSX.E
 
   return (
     <NotificationContext.Provider value={{notifications, addNotification}}>
-      <style>{css}</style>
+      {
+        useDefaultStyle ?
+          <style>{css}</style>
+        : null
+      }
       {
         notifications.map((notif) => {
           return <NotificationComponent key={notif.id} Notification={notif} />
         })
       }
-      {props.children}
+      {children}
     </NotificationContext.Provider>
   );
 }

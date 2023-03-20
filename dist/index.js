@@ -160,7 +160,7 @@ const css = `
   100% { width: 0%; }
 }
 `;
-export function NotificationsProvider(props) {
+export function NotificationsProvider({ children, useDefaultStyle }) {
     const [notifications, setNotification] = React.useState([]);
     function addNotification(Notification) {
         setNotification((notifs) => [
@@ -212,11 +212,13 @@ export function NotificationsProvider(props) {
         return notifComponent;
     });
     return (React.createElement(NotificationContext.Provider, { value: { notifications, addNotification } },
-        React.createElement("style", null, css),
+        useDefaultStyle ?
+            React.createElement("style", null, css)
+            : null,
         notifications.map((notif) => {
             return React.createElement(NotificationComponent, { key: notif.id, Notification: notif });
         }),
-        props.children));
+        children));
 }
 const _ = {
     NotificationsProvider,
