@@ -28,7 +28,40 @@ import { NotificationsProvider } from "react-better-notifications";
 
 Adding the Notifications Provider at the root of you app will let you use the `addNotification` function from the `NotificationContext` hook to send notifications.
 
+`addNotification`
+
+| Parameter | Type  | Description |
+| --- | --- | --- |
+| useDefaultStyle | boolean | Should use default styles or custom ones |
+| notificationsStyle | notificationsStyle | Notifications Styles |
+
+### notificationsStyle prop:
+
+
+
 ### NotificationContext & addNotification:
+
+```jsx
+import React from "react";
+import { NotificationsProvider, notificationsStyle } from "react-better-notifications";
+
+const customNotificationsStyles: notificationsStyle = {
+  QuickPopupStyle: {
+    notificationContainer: {
+      backgroundColor: "red",
+      borderRadius: "10px"
+    },
+    messageText: {
+      fontWeight: 800
+    }
+  }
+}
+
+<NotificationsProvider useDefaultStyle={false} notificationsStyle={customNotificationsStyles}>
+  <App />
+</NotificationsProvider>
+
+```
 
 ```tsx
 import { NotificationContext } from "react-better-notifications"
@@ -70,4 +103,4 @@ const MyComponent: React.FC = () => {
 | --- | --- | --- |
 | type | string | Notification type |
 | emoji | string | Notification emoji |
-| mesage | string | Notification type |
+| message | string | Notification type |
