@@ -28,7 +28,7 @@ import { NotificationsProvider } from "react-better-notifications";
 
 Adding the Notifications Provider at the root of you app will let you use the `addNotification` function from the `NotificationContext` hook to send notifications.
 
-`addNotification`
+`NotificationsProvider`
 
 | Parameter | Type  | Description |
 | --- | --- | --- |
@@ -37,11 +37,7 @@ Adding the Notifications Provider at the root of you app will let you use the `a
 
 ### notificationsStyle prop:
 
-
-
-### NotificationContext & addNotification:
-
-```jsx
+```tsx
 import React from "react";
 import { NotificationsProvider, notificationsStyle } from "react-better-notifications";
 
@@ -62,6 +58,8 @@ const customNotificationsStyles: notificationsStyle = {
 </NotificationsProvider>
 
 ```
+
+### NotificationContext & addNotification:
 
 ```tsx
 import { NotificationContext } from "react-better-notifications"
