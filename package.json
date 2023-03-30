@@ -1,6 +1,6 @@
 {
   "name": "react-better-notifications",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Every kind of notifications implemented in react",
   "author": "x-Wawa",
   "license": "MIT",
@@ -20,8 +20,8 @@
     "react-notifications"
   ],
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "devDependencies": {
     "@types/node": "^18.15.3",
