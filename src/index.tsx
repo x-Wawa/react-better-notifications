@@ -170,7 +170,8 @@ export function NotificationsProvider({children, useDefaultStyle, notificationsS
 
 const _ = {
   NotificationsProvider,
-  NotificationContext
+  NotificationContext,
+  useNotification
 }
 
 export default _;

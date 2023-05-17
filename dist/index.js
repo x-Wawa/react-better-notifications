@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 export const NotificationContext = React.createContext({
     notifications: [],
     addNotification: () => { }
@@ -43,6 +43,9 @@ const defaulNotificationsStyle = {
             fontFamily: 'sans-serif'
         }
     }
+};
+export const useNotification = () => {
+    return useContext(NotificationContext).addNotification;
 };
 export function NotificationsProvider({ children, useDefaultStyle, notificationsStyle }) {
     if (!useDefaultStyle)
@@ -97,7 +100,8 @@ export function NotificationsProvider({ children, useDefaultStyle, notifications
 }
 const _ = {
     NotificationsProvider,
-    NotificationContext
+    NotificationContext,
+    useNotification
 };
 export default _;
 //# sourceMappingURL=index.js.map
