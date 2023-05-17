@@ -59,18 +59,19 @@ const customNotificationsStyles: notificationsStyle = {
 
 ```
 
-### NotificationContext & addNotification:
+### NotificationContext & notify:
 
 ```tsx
-import { NotificationContext } from "react-better-notifications"
 
-  const { addNotification } = React.useContext(NotificationContext)
+import { useNotification } from "react-better-notifications";
+
+const notify = useNotification();
 
 const MyComponent: React.FC = () => {
   const { data, error, loading } = useBasicFetch<Quote>('https://quotes.rest/quote/random?language=en&limit=1', 2000);
 
   if (error) {
-    return addNotification(
+    return notify(
       {
         type: "quickpopup",
         emoji: "⚠️",
@@ -79,7 +80,7 @@ const MyComponent: React.FC = () => {
   }
   
   if (loading) {
-    return addNotification(
+    return notify(
       {
         type: "quickpopup",
         emoji: "🔄",
@@ -95,7 +96,7 @@ const MyComponent: React.FC = () => {
   );
 };
 ```
-`addNotification`
+`notify` (hook function)
 
 | Parameter | Type  | Description |
 | --- | --- | --- |

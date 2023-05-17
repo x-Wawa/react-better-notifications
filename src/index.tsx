@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 
 
 export interface NotificationsProps {
@@ -87,6 +87,10 @@ const defaulNotificationsStyle: notificationsStyle = {
       fontFamily: 'sans-serif'
     }
   }
+}
+
+export const useNotification = () => {
+  return useContext(NotificationContext).addNotification
 }
 
 export function NotificationsProvider({children, useDefaultStyle, notificationsStyle}: {children: React.ReactNode, useDefaultStyle?: boolean, notificationsStyle?: notificationsStyle}): JSX.Element {
